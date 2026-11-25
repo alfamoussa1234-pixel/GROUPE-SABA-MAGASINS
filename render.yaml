@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: groupe-saba-magasins
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: saba-magasins-db
+          property: connectionString
+databases:
+  - name: saba-magasins-db

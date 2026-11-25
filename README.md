@@ -1,0 +1,5 @@
+# GROUPE SABA – Gestion des magasins (prototype)
+
+Déploiement Render : créer un service Web Python depuis un dépôt GitHub contenant ces fichiers. Build : `pip install -r requirements.txt`. Start : `gunicorn app:app --workers 1`. Créer une base PostgreSQL Render et définir DATABASE_URL avec son URL interne. Définir SECRET_KEY (valeur aléatoire forte) et ADMIN_PASSWORD (mot de passe initial fort, au moins 12 caractères). Connexion initiale : admin. Créer ensuite un magasinier et un validateur distincts. Retirer ADMIN_PASSWORD après initialisation. Ne pas publier les secrets dans GitHub.
+
+Prototype : articles, deux magasins, utilisateurs, mouvements, validation unique, rejet motivé, historique, seuils. PostgreSQL est nécessaire en production pour les verrous transactionnels. Ne pas utiliser en production avant tests de concurrence, permissions, sauvegardes et sécurité. Modules restant à développer : achats, fournisseurs, inventaires, dotations, pièces jointes, notifications, exports PDF/Excel, récupération des mots de passe, valorisation et tableaux de bord avancés. Aucun déploiement effectué.
